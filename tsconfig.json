@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError": true,
+    "noEmit": true,
+    "target": "ES2022",
+    // DOM is here for tests and scripts (WebAssembly, TextEncoder, streams).
+    // The library's own "no host APIs" rule is enforced where it actually
+    // matters, by `no-restricted-globals` scoped to src/** in .oxlintrc.json
+    // — a lib setting could not express "banned in src, fine in tests".
+    "lib": ["ES2022", "DOM"],
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "types": ["node"],
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts", "scripts/**/*.ts", "tsdown.config.ts"],
+  "exclude": ["dist", "node_modules"]
+}

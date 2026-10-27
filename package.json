@@ -1,0 +1,110 @@
+{
+  "name": "wzstd",
+  "version": "0.1.0",
+  "description": "Pure TypeScript Zstandard codec: ~6 KB gzipped decoder, no native or WASM dependency, checksums verified by default.",
+  "keywords": [
+    "compress",
+    "compression",
+    "decompress",
+    "decompression",
+    "esm",
+    "tanstack-intent",
+    "typescript",
+    "zstandard",
+    "zstd"
+  ],
+  "homepage": "https://github.com/danieljohnsxd/wzstd#readme",
+  "bugs": {
+    "url": "https://github.com/danieljohnsxd/wzstd/issues"
+  },
+  "license": "MIT",
+  "author": "Daniel Johns",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieljohnsxd/wzstd.git"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./compressFast": {
+      "types": "./dist/compressFast.d.ts",
+      "import": "./dist/compressFast.js",
+      "default": "./dist/compressFast.js"
+    },
+    "./compressStrong": {
+      "types": "./dist/compressStrong.d.ts",
+      "import": "./dist/compressStrong.js",
+      "default": "./dist/compressStrong.js"
+    },
+    "./compressUltra": {
+      "types": "./dist/compressUltra.d.ts",
+      "import": "./dist/compressUltra.js",
+      "default": "./dist/compressUltra.js"
+    },
+    "./decompress": {
+      "types": "./dist/decompress.d.ts",
+      "import": "./dist/decompress.js",
+      "default": "./dist/decompress.js"
+    },
+    "./decompressStream": {
+      "types": "./dist/decompressStream.d.ts",
+      "import": "./dist/decompressStream.js",
+      "default": "./dist/decompressStream.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "check": "pnpm run fmt:check && pnpm run lint",
+    "check-types": "pnpm run lint",
+    "clean": "rm -rf dist",
+    "fmt": "oxfmt .",
+    "fmt:check": "oxfmt --check .",
+    "format": "pnpm run fmt",
+    "fr": "fr",
+    "fr:audit": "fr --audit",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
+    "prepack": "pnpm run build",
+    "test": "pnpm run build && node scripts/run_test.ts",
+    "test:zrip": "pnpm run build && node --test tests/zrip_cross_test.ts",
+    "bench:decode": "pnpm run build && node scripts/bench_decode.ts",
+    "bench:encode": "pnpm run build && node scripts/bench_encode.ts",
+    "bench:ab": "pnpm run build && node scripts/ab_encode.ts",
+    "bench:ab-decode": "pnpm run build && node scripts/ab_decode.ts",
+    "bench:match-stats": "pnpm run build && node scripts/match_stats.ts",
+    "bench:profile-corpus": "node scripts/profile_corpus.ts",
+    "bench:summary": "pnpm run build && node scripts/bench_summary.ts",
+    "bench:check": "pnpm run build && node scripts/bench_check.ts",
+    "bench:ultra-levers": "pnpm run build && node scripts/ultra_lever_sweep.ts",
+    "typecheck": "pnpm run lint",
+    "fuzz": "pnpm run build && node scripts/fuzz.ts"
+  },
+  "devDependencies": {
+    "@chenglou/freerange": "^0.0.4",
+    "@paddor/zrip": "npm:@jsr/paddor__zrip@^0.5.3",
+    "@types/node": "^24.13.3",
+    "fflate": "^0.8.3",
+    "fzstd": "^0.1.1",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "oxlint-tsgolint": "^7.0.2005",
+    "tsdown": "^0.23.2",
+    "typescript": "7.1.0-beta"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@12.0.0"
+}

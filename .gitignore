@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build
+dist/
+*.tsbuildinfo
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Logs & coverage
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+
+# Caches
+.cache/
+.turbo/
+.vite/
+.eslintcache
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Test / temp
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Bench corpus sampled from external data — keep the dir + README, ignore payloads
+extra-bench-data/*
+!extra-bench-data/README.md
+
+# Pinned Silesia subset (downloaded by --silesia); keep README if present
+bench-data/silesia/*
+!bench-data/silesia/README.md
+
+# Cached decode-bench frames (rebuilt with --rebuild-cache); keep README
+bench-data/decode-cache/*
+!bench-data/decode-cache/README.md
