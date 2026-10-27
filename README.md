@@ -35,7 +35,7 @@ Agents: the same guidance, with the rules and error handling, is in
 - **gzip instead** when the consumer is old or unknown, or the built-in
   `CompressionStream` is enough — see the sibling
   [wgzip](https://github.com/danieljohnsxd/wgzip). Image uploads (resize,
-  re-encode) are [wimgs](https://github.com/danieljohnsxd/wimgs).
+  re-encode) are [wimages](https://github.com/danieljohnsxd/wimages).
 
 ## Design choices
 

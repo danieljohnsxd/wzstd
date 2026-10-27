@@ -11,7 +11,7 @@ description: Compress or decompress Zstandard (zstd) in pure TypeScript with wzs
 - On **Node 22.15+ / 23.8+**, prefer `node:zlib` (`zstdCompressSync`, `zstdDecompressSync`, `createZstdDecompress`) — native and faster; still marked experimental in Node docs.
 - **Build-time static assets**: do not use a JS encoder. Precompress with the native `zstd` or `brotli` CLI at a high level and serve the files.
 - **Browser fetch of `Content-Encoding: zstd`**: the browser decodes it already (Chrome 123+, Firefox 126+, Safari 26.3+ on OS 26.3). Do not decode `response.body` again. `DecompressionStream` does not support zstd anywhere.
-- **Serving HTTP**: only send zstd when `Accept-Encoding` lists it; otherwise gzip (sibling package `wgzip`, or built-in `CompressionStream`) or brotli. Image uploads (resize / re-encode) are the sibling `wimgs`, not this.
+- **Serving HTTP**: only send zstd when `Accept-Encoding` lists it; otherwise gzip (sibling package `wgzip`, or built-in `CompressionStream`) or brotli. Image uploads (resize / re-encode) are the sibling `wimages`, not this.
 
 ## Happy path
 
